@@ -16,6 +16,11 @@ def index():
             uploaded_file.save(image_path)
             class_name = inference.get_prediction(image_path)
             print('class name =', class_name)
+            result = {
+                'class_name' : class_name,
+                'image_path' :image_path,
+            }
+            return render_template('show.html', result = result)
     return render_template('index.html')
 if __name__ == '__main__' :
     app.run(debug = True)
