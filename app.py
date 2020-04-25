@@ -1,12 +1,12 @@
 from flask import Flask,render_template
-from flask_bootstrap import Booststrap
+from flask_bootstrap import Bootstrap
 app = Flask(__name__)
-Booststrap(app)
+Bootstrap(app)
 """
 Routes
 """
 @app.route('/', methods = ['GET'])
 def index():
-    return rennder_template('index.html')
+    return render_template('index.html')
 if __name__ == '__main__' :
     app.run(debug = True)
